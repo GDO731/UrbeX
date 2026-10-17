@@ -390,6 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2891815596930999840}
+  - component: {fileID: 2494057888629445635}
   - component: {fileID: 4587898248141779948}
   m_Layer: 0
   m_Name: Footsteps
@@ -413,6 +414,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8925200515949159986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2494057888629445635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588462776453769347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764245ecf988c6449a0297ab155e8f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Game.Scripts.MovementSounds.FootstepManager
+  footstepSource: {fileID: 4587898248141779948}
+  footstepClips:
+  - {fileID: 8300000, guid: 11de92168610b604eb445b9b6514d5f1, type: 3}
+  - {fileID: 8300000, guid: 1230c8a5a4f161d4491f7be7b5426db7, type: 3}
+  - {fileID: 8300000, guid: 5f194c020e5d9464899770d6d7d5d0d0, type: 3}
+  stepInterval: 0.45
+  rayDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!82 &4587898248141779948
 AudioSource:
   m_ObjectHideFlags: 0
