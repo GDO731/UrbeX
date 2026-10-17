@@ -1,3 +1,4 @@
+using Assets.Game.Scripts.Dialogue;
 using UnityEngine;
 
 namespace Assets.Game.Scripts.Interaction
@@ -6,6 +7,7 @@ namespace Assets.Game.Scripts.Interaction
     {
         [SerializeField] bool isOpen;
         [SerializeField] bool isLocked;
+        [SerializeField] AIConversant lockedConversant;
 
         static readonly int IsOpenHash = Animator.StringToHash("IsOpen");
 
@@ -14,6 +16,7 @@ namespace Assets.Game.Scripts.Interaction
         void Awake()
         {
             animator = GetComponent<Animator>();
+            if (lockedConversant == null) lockedConversant = GetComponentInChildren<AIConversant>();
         }
 
         void Start()
@@ -23,7 +26,13 @@ namespace Assets.Game.Scripts.Interaction
 
         public override bool Interact()
         {
-            if (isLocked) return false;
+
+            if (isLocked)
+            {
+                lockedConversant?.TriggerDialogue();
+                return false;
+            }
+
             SetDoor(!isOpen);
             return true;
         }
