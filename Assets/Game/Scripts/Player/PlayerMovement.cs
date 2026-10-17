@@ -7,6 +7,7 @@ namespace Assets.Game.Scripts.Player
         [SerializeField] float walkSpeed = 3.5f;
         [SerializeField] float runSpeed = 6f;
         [SerializeField] float gravity = -25f;
+        [SerializeField] float jumpHeight = 1.2f;
         [SerializeField] SpriteRenderer sprite;
 
 
@@ -36,7 +37,12 @@ namespace Assets.Game.Scripts.Player
             Vector3 right = Vector3.ProjectOnPlane(cam.right, Vector3.up).normalized;
             Vector3 motion = (forward * input.y + right * input.x) * speed;
 
-            if (controller.isGrounded && verticalVelocity < 0f) verticalVelocity = -2f;
+            if (controller.isGrounded)
+            {
+                if (verticalVelocity < 0f) verticalVelocity = -2f;
+                if (controls.Player.Jump.WasPressedThisFrame()) verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+
             verticalVelocity += gravity * Time.deltaTime;
             motion.y = verticalVelocity;
 
