@@ -194,7 +194,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -282,6 +281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7632055478995532640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be704fc54c11b64a80bbf64f67e9d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e6745f67030c5140ad40d105a7988ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FaceCamera
+  faceCamera: 1
